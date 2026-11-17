@@ -1,0 +1,1215 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#06152f">
+
+<title>RADIO IPUL | Radio Oficial 24/7</title>
+
+<meta name="description" content="Radio IPUL, una emisora cristiana para compartir el mensaje de Dios, música, enseñanzas y programación espiritual las 24 horas.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --navy: #06152f;
+    --navy2: #0b2145;
+    --blue: #087bdb;
+    --electric: #16a5ff;
+    --gold: #d4af37;
+    --white: #ffffff;
+    --light: #f3f7fc;
+    --gray: #a9b7ca;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: #17243a;
+    background: white;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    font-family: inherit;
+}
+
+.container {
+    width: min(1150px, 90%);
+    margin: auto;
+}
+
+/* NAVBAR */
+
+header {
+    background: rgba(6,21,47,.97);
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(0,0,0,.15);
+}
+
+.navbar {
+    min-height: 78px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-icon {
+    width: 60px;
+    height: 60px;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.logo-icon img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.logo-text strong {
+    display: block;
+    font-size: 21px;
+    letter-spacing: 2px;
+    line-height: 1.2;
+}
+
+.logo-text small {
+    color: var(--gold);
+    font-size: 10px;
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 27px;
+    list-style: none;
+}
+
+.nav-links a {
+    font-size: 13px;
+    font-weight: 600;
+    color: #d9e4f5;
+    transition: .3s;
+}
+
+.nav-links a:hover {
+    color: var(--electric);
+}
+
+.nav-links .nav-cta {
+    background: var(--blue);
+    color: white;
+    padding: 11px 19px;
+    border-radius: 7px;
+}
+
+.menu-toggle {
+    display: none;
+    border: 0;
+    background: transparent;
+    color: white;
+    font-size: 27px;
+    cursor: pointer;
+}
+
+/* HERO */
+
+.hero {
+    min-height: 620px;
+    display: flex;
+    align-items: center;
+    color: white;
+    background:
+        radial-gradient(circle at 80% 40%, rgba(8,123,219,.30), transparent 35%),
+        linear-gradient(120deg, #06152f, #0b2145 65%, #071b38);
+    overflow: hidden;
+    position: relative;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    width: 450px;
+    height: 450px;
+    border: 1px solid rgba(255,255,255,.08);
+    border-radius: 50%;
+    right: -100px;
+    top: 70px;
+    box-shadow: 0 0 0 45px rgba(255,255,255,.025),
+                0 0 0 90px rgba(255,255,255,.02);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 700px;
+    padding: 90px 0;
+}
+
+.live-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    color: #fff;
+    background: rgba(255,255,255,.10);
+    padding: 8px 15px;
+    border: 1px solid rgba(255,255,255,.15);
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.live-dot {
+    height: 9px;
+    width: 9px;
+    border-radius: 50%;
+    background: #20df83;
+    box-shadow: 0 0 12px #20df83;
+}
+
+.hero h1 {
+    font-size: clamp(42px, 7vw, 76px);
+    font-weight: 900;
+    line-height: 1.08;
+    margin: 28px 0 20px;
+}
+
+.hero h1 span {
+    color: var(--electric);
+}
+
+.hero p {
+    color: #c4d1e3;
+    font-size: 17px;
+    max-width: 580px;
+    margin-bottom: 32px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    padding: 14px 24px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 14px;
+    transition: .3s;
+    cursor: pointer;
+    border: none;
+}
+
+.btn-primary {
+    background: var(--blue);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: var(--electric);
+    transform: translateY(-3px);
+}
+
+.btn-outline {
+    border: 1px solid rgba(255,255,255,.5);
+    color: white;
+}
+
+.btn-outline:hover {
+    background: white;
+    color: var(--navy);
+}
+
+/* GENERAL */
+
+section {
+    padding: 90px 0;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+.section-title span {
+    color: var(--blue);
+    font-weight: 800;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.section-title h2 {
+    color: var(--navy);
+    font-size: clamp(28px, 4vw, 40px);
+    margin-top: 9px;
+    font-weight: 800;
+}
+
+.section-title p {
+    color: #718096;
+    max-width: 650px;
+    margin: 12px auto 0;
+}
+
+/* ABOUT */
+
+.about {
+    background: white;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 55px;
+}
+
+.about-visual {
+    min-height: 350px;
+    border-radius: 20px;
+    background:
+        radial-gradient(circle, rgba(22,165,255,.25), transparent 60%),
+        linear-gradient(140deg, #06152f, #123d70);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    padding: 30px;
+}
+
+.radio-symbol {
+    font-size: 75px;
+    margin-bottom: 12px;
+}
+
+.about-visual h3 {
+    color: white;
+    font-size: 27px;
+}
+
+.about-visual p {
+    color: #c9dcf3;
+    margin-top: 8px;
+}
+
+.about-content h2 {
+    font-size: 35px;
+    color: var(--navy);
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.about-content p {
+    color: #64748b;
+    margin-bottom: 17px;
+}
+
+.about-list {
+    list-style: none;
+    margin-top: 22px;
+}
+
+.about-list li {
+    margin-bottom: 12px;
+    font-weight: 600;
+    color: #24364d;
+}
+
+.about-list li span {
+    color: var(--blue);
+    margin-right: 10px;
+}
+
+/* SERVICES */
+
+.services {
+    background: var(--light);
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 23px;
+}
+
+.service-card {
+    background: white;
+    border: 1px solid #e8edf5;
+    border-radius: 14px;
+    padding: 30px 25px;
+    transition: .3s;
+}
+
+.service-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 15px 35px rgba(6,21,47,.09);
+}
+
+.service-icon {
+    width: 55px;
+    height: 55px;
+    background: #e7f3ff;
+    color: var(--blue);
+    border-radius: 12px;
+    display: grid;
+    place-items: center;
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.service-card h3 {
+    color: var(--navy);
+    margin-bottom: 10px;
+    font-size: 19px;
+}
+
+.service-card p {
+    color: #718096;
+    font-size: 14px;
+}
+
+/* PROGRAMMING */
+
+.programming {
+    background: white;
+}
+
+.program-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.program-card {
+    padding: 26px;
+    border-radius: 12px;
+    background: var(--navy);
+    color: white;
+    border-bottom: 4px solid var(--electric);
+}
+
+.program-card .time {
+    color: var(--electric);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+}
+
+.program-card h3 {
+    font-size: 19px;
+    margin-bottom: 8px;
+}
+
+.program-card p {
+    color: #b8c7dc;
+    font-size: 13px;
+}
+
+/* COMMUNITY */
+
+.community {
+    background: linear-gradient(120deg, #06152f, #0b3670);
+    color: white;
+    text-align: center;
+}
+
+.community h2 {
+    font-size: clamp(28px, 4vw, 42px);
+    margin-bottom: 15px;
+}
+
+.community p {
+    color: #c3d2e5;
+    max-width: 680px;
+    margin: 0 auto 28px;
+}
+
+.community .btn {
+    background: var(--gold);
+    color: #10203b;
+}
+
+/* CONTACT */
+
+.contact {
+    background: var(--light);
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: .8fr 1.2fr;
+    gap: 45px;
+}
+
+.contact-info h3 {
+    font-size: 26px;
+    color: var(--navy);
+    margin-bottom: 14px;
+}
+
+.contact-info p {
+    color: #718096;
+    margin-bottom: 25px;
+}
+
+.contact-item {
+    display: flex;
+    gap: 13px;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #334155;
+}
+
+.contact-item span {
+    font-size: 22px;
+}
+
+.contact-form {
+    background: white;
+    padding: 32px;
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(6,21,47,.05);
+}
+
+.contact-form h3 {
+    color: var(--navy);
+    margin-bottom: 22px;
+    font-size: 22px;
+}
+
+.form-group {
+    margin-bottom: 17px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 7px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #334155;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    border: 1px solid #dce4ef;
+    border-radius: 7px;
+    padding: 13px;
+    font-family: inherit;
+    font-size: 14px;
+    outline: none;
+    transition: .3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--blue);
+    box-shadow: 0 0 0 3px rgba(8,123,219,.10);
+}
+
+.form-group textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.form-message {
+    margin-top: 12px;
+    font-size: 13px;
+    color: #087bdb;
+}
+
+/* FOOTER */
+
+footer {
+    background: #041126;
+    color: white;
+    padding: 50px 0 20px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 35px;
+    margin-bottom: 35px;
+}
+
+.footer-about p {
+    color: #a9b7ca;
+    font-size: 13px;
+    max-width: 340px;
+    margin-top: 15px;
+}
+
+.footer-col h4 {
+    margin-bottom: 15px;
+    color: white;
+}
+
+.footer-col a {
+    display: block;
+    color: #a9b7ca;
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+
+.footer-col a:hover {
+    color: var(--electric);
+}
+
+.copyright {
+    border-top: 1px solid rgba(255,255,255,.12);
+    padding-top: 20px;
+    text-align: center;
+    color: #8091a9;
+    font-size: 12px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width: 850px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 78px;
+        left: 0;
+        width: 100%;
+        background: var(--navy);
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 15px 5% 25px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li a {
+        display: block;
+        padding: 13px 0;
+    }
+
+    .nav-links .nav-cta {
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .about-grid,
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cards,
+    .program-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media(max-width: 560px) {
+    .hero {
+        min-height: 570px;
+    }
+
+    .hero-content {
+        padding: 65px 0;
+    }
+
+    .hero p {
+        font-size: 15px;
+    }
+
+    section {
+        padding: 65px 0;
+    }
+
+    .cards,
+    .program-grid,
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-form {
+        padding: 22px;
+    }
+
+    .about-visual {
+        min-height: 280px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <nav class="navbar container">
+
+        <a href="#inicio" class="logo">
+            <div class="logo-icon">
+                  <img src="./logo-radio-ipul.png" alt="RADIO IPUL"></div>
+            <div class="logo-text">
+                <strong>RADIO IPUL</strong>
+                <small>RADIO OFICIAL 24/7</small>
+            </div>
+        </a>
+
+        <button class="menu-toggle" id="menuToggle"
+                aria-label="Abrir menú" aria-expanded="false">
+            ☰
+        </button>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#nosotros">Nosotros</a></li>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#programacion">Programación</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+            <li>
+                <a class="nav-cta"
+                   href="https://criptologiaprofesional.mixlr.com"
+                   target="_blank" rel="noopener noreferrer">
+                   ▶ ESCUCHAR EN VIVO
+                </a>
+            </li>
+        </ul>
+
+    </nav>
+</header>
+
+<main>
+
+<!-- INICIO -->
+
+<section class="hero" id="inicio">
+    <div class="container">
+        <div class="hero-content">
+
+            <div class="live-label">
+                <span class="live-dot"></span>
+                RADIO CRISTIANA EN LÍNEA
+            </div>
+
+            <h1>
+                Una voz de esperanza,
+                <span>un mensaje de vida.</span>
+            </h1>
+
+            <p>
+                Bienvenidos a RADIO IPUL, un espacio creado para
+                compartir la Palabra de Dios, transmitir esperanza,
+                fortalecer la fe y llevar un mensaje de salvación
+                a cada corazón.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="https://criptologiaprofesional.mixlr.com"
+                   target="_blank" rel="noopener noreferrer"
+                   class="btn btn-primary">
+                    ▶ ESCUCHAR TRANSMISIÓN
+                </a>
+
+                <a href="#nosotros" class="btn btn-outline">
+                    CONÓCENOS
+                </a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- NOSOTROS -->
+
+<section class="about" id="nosotros">
+    <div class="container about-grid">
+
+        <div class="about-visual">
+            <div>
+                <div class="radio-symbol"><img src="logo-radio-ipul.png" alt="RADIO IPUL"></div>
+                <h3>RADIO IPUL</h3>
+                <p>Una señal de fe para el mundo</p>
+            </div>
+        </div>
+
+        <div class="about-content">
+            <div class="section-title" style="text-align:left;margin-bottom:20px">
+                <span>QUIÉNES SOMOS</span>
+            </div>
+
+            <h2>Una radio con propósito y una misión espiritual.</h2>
+
+            <p>
+                RADIO IPUL es un medio de comunicación cristiano
+                dedicado a compartir el evangelio de Jesucristo
+                mediante la música, la enseñanza bíblica,
+                la oración y contenidos que edifican la vida espiritual.
+            </p>
+
+            <p>
+                Nuestro propósito es alcanzar hogares, familias
+                y personas de diferentes lugares con un mensaje
+                de fe, esperanza y salvación.
+            </p>
+
+            <ul class="about-list">
+                <li><span>✓</span> Predicación y enseñanza bíblica.</li>
+                <li><span>✓</span> Música cristiana y alabanzas.</li>
+                <li><span>✓</span> Mensajes de fe y esperanza.</li>
+                <li><span>✓</span> Programación para toda la familia.</li>
+            </ul>
+        </div>
+
+    </div>
+</section>
+
+<!-- SERVICIOS -->
+
+<section class="services" id="servicios">
+    <div class="container">
+
+        <div class="section-title">
+            <span>LO QUE OFRECEMOS</span>
+            <h2>Una programación que edifica</h2>
+            <p>
+                Contenidos diseñados para fortalecer tu relación
+                con Dios y acompañarte en cada momento.
+            </p>
+        </div>
+
+        <div class="cards">
+
+            <article class="service-card">
+                <div class="service-icon">🎙️</div>
+                <h3>Predicación bíblica</h3>
+                <p>
+                    Mensajes fundamentados en la Palabra de Dios
+                    para fortalecer la fe y transformar vidas.
+                </p>
+            </article>
+
+            <article class="service-card">
+                <div class="service-icon">🎵</div>
+                <h3>Música cristiana</h3>
+                <p>
+                    Alabanzas y música cristiana para acompañar
+                    tus actividades diarias.
+                </p>
+            </article>
+
+            <article class="service-card">
+                <div class="service-icon">🙏</div>
+                <h3>Oración e intercesión</h3>
+                <p>
+                    Un espacio para compartir peticiones,
+                    fortalecer la fe y buscar la presencia de Dios.
+                </p>
+            </article>
+
+            <article class="service-card">
+                <div class="service-icon">📖</div>
+                <h3>Enseñanza bíblica</h3>
+                <p>
+                    Reflexiones y estudios para crecer
+                    en conocimiento y vida espiritual.
+                </p>
+            </article>
+
+            <article class="service-card">
+                <div class="service-icon">🌎</div>
+                <h3>Alcance internacional</h3>
+                <p>
+                    Una señal digital que permite llevar
+                    el mensaje cristiano a diferentes lugares.
+                </p>
+            </article>
+
+            <article class="service-card">
+                <div class="service-icon">📡</div>
+                <h3>Transmisiones especiales</h3>
+                <p>
+                    Cobertura de eventos, convenciones,
+                    campañas y actividades especiales.
+                </p>
+            </article>
+
+        </div>
+    </div>
+</section>
+
+<!-- PROGRAMACIÓN -->
+
+<section class="programming" id="programacion">
+    <div class="container">
+
+        <div class="section-title">
+            <span>ACOMPÁÑANOS</span>
+            <h2>Nuestras transmisiones</h2>
+            <p>
+                Encuentra espacios de música, reflexión,
+                enseñanza y edificación espiritual.
+            </p>
+        </div>
+
+        <div class="program-grid">
+
+            <article class="program-card">
+                <div class="time">PROGRAMACIÓN MUSICAL</div>
+                <h3>Alabanzas y adoración</h3>
+                <p>Música cristiana para acompañar tu día.</p>
+            </article>
+
+            <article class="program-card">
+                <div class="time">MENSAJE BÍBLICO</div>
+                <h3>La Palabra de Dios</h3>
+                <p>Enseñanzas y predicaciones para tu crecimiento.</p>
+            </article>
+
+            <article class="program-card">
+                <div class="time">ESPACIO DE ORACIÓN</div>
+                <h3>Tiempo de intercesión</h3>
+                <p>Un momento para acercarnos a Dios en oración.</p>
+            </article>
+
+            <article class="program-card">
+                <div class="time">PROGRAMAS ESPECIALES</div>
+                <h3>Voces de esperanza</h3>
+                <p>Reflexiones y mensajes para toda la familia.</p>
+            </article>
+
+            <article class="program-card">
+                <div class="time">EVENTOS ESPECIALES</div>
+                <h3>Transmisiones en directo</h3>
+                <p>Eventos y actividades de la obra cristiana.</p>
+            </article>
+
+            <article class="program-card">
+                <div class="time">RADIO IPUL</div>
+                <h3>Conéctate con nosotros</h3>
+                <p>Disfruta de nuestra programación en línea.</p>
+            </article>
+
+        </div>
+
+        <div style="text-align:center;margin-top:35px">
+            <a href="https://criptologiaprofesional.mixlr.com"
+               target="_blank" rel="noopener noreferrer"
+               class="btn btn-primary">
+                ▶ IR A RADIO IPUL EN VIVO
+            </a>
+        </div>
+
+    </div>
+</section>
+
+<!-- COMUNIDAD -->
+
+<section class="community">
+    <div class="container">
+
+        <h2>La distancia no limita el poder del mensaje.</h2>
+
+        <p>
+            Conéctate desde cualquier lugar y permite que
+            la Palabra de Dios llegue a tu hogar.
+            Comparte nuestra señal con familiares y amigos.
+        </p>
+
+        <a href="https://criptologiaprofesional.mixlr.com"
+           target="_blank" rel="noopener noreferrer"
+           class="btn">
+            ESCUCHAR RADIO IPUL
+        </a>
+
+    </div>
+</section>
+
+<!-- CONTACTO -->
+
+<section class="contact" id="contacto">
+    <div class="container">
+
+        <div class="section-title">
+            <span>ESTAMOS PARA SERVIRTE</span>
+            <h2>Conéctate con RADIO IPUL</h2>
+            <p>
+                Envíanos tus comentarios, peticiones de oración,
+                sugerencias o propuestas de colaboración.
+            </p>
+        </div>
+
+        <div class="contact-grid">
+
+            <div class="contact-info">
+                <h3>Queremos escucharte.</h3>
+
+                <p>
+                    Tu participación es importante.
+                    Escríbenos y forma parte de esta comunidad
+                    de fe que comparte el mensaje de Jesucristo.
+                </p>
+
+                <div class="contact-item">
+                    <span> <img src="logo-radio-ipul.png" alt="RADIO IPUL"></span>
+                    <div>
+                        RADIO IPUL<br>
+                        <small>Radio Oficial 24/7</small>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <span>🌎</span>
+                    <div>
+                        <small>Transmisión por internet</small><br>
+                        El Salvador y el mundo
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <span>🎧</span>
+                    <div>
+                        <a href="https://criptologiaprofesional.mixlr.com"
+                           target="_blank" rel="noopener noreferrer">
+                           Escuchar nuestra señal
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <form class="contact-form" id="contactForm">
+                <h3>Envíanos un mensaje</h3>
+
+                <div class="form-group">
+                    <label for="nombre">Nombre completo</label>
+                    <input type="text" id="nombre"
+                           placeholder="Escribe tu nombre" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="correo">Correo electrónico</label>
+                    <input type="email" id="correo"
+                           placeholder="tucorreo@ejemplo.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="asunto">Asunto</label>
+                    <input type="text" id="asunto"
+                           placeholder="Motivo de tu mensaje" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="mensaje">Mensaje</label>
+                    <textarea id="mensaje"
+                              placeholder="Escribe tu mensaje..."
+                              required></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary">
+                    ENVIAR MENSAJE
+                </button>
+
+                <p class="form-message" id="formMessage"
+                   role="status" aria-live="polite"></p>
+            </form>
+
+        </div>
+    </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+
+<footer>
+    <div class="container">
+
+        <div class="footer-grid">
+
+            <div class="footer-about">
+                <a href="#inicio" class="logo">
+                    <div class="logo-icon"><img src="logo-radio-ipul.png" alt="RADIO IPUL"></div>
+                    <div class="logo-text">
+                        <strong>RADIO IPUL</strong>
+                        <small>RADIO OFICIAL 24/7</small>
+                    </div>
+                </a>
+
+                <p>
+                    Una voz de esperanza, un mensaje de vida.
+                    Compartiendo el evangelio de Jesucristo
+                    a través de la comunicación digital.
+                </p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Navegación</h4>
+                <a href="#inicio">Inicio</a>
+                <a href="#nosotros">Nosotros</a>
+                <a href="#servicios">Servicios</a>
+                <a href="#programacion">Programación</a>
+                <a href="#contacto">Contacto</a>
+            </div>
+
+            <div class="footer-col">
+                <h4>Conéctate</h4>
+                <a href="https://criptologiaprofesional.mixlr.com"
+                   target="_blank" rel="noopener noreferrer">
+                   Nuestra transmisión
+                </a>
+                <a href="#contacto">Envíanos un mensaje</a>
+                <a href="#programacion">Programas especiales</a>
+            </div>
+
+        </div>
+
+        <div class="copyright">
+            © <span id="year"></span> RADIO IPUL - Radio Oficial 24/7.
+            Todos los derechos reservados.
+        </div>
+
+    </div>
+</footer>
+
+<script>
+
+/* MENÚ RESPONSIVO */
+
+const menuToggle = document.getElementById("menuToggle");
+const navLinks = document.getElementById("navLinks");
+
+menuToggle.addEventListener("click", () => {
+    const isOpen = navLinks.classList.toggle("active");
+    menuToggle.setAttribute("aria-expanded", String(isOpen));
+    menuToggle.textContent = isOpen ? "✕" : "☰";
+});
+
+document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", () => {
+        navLinks.classList.remove("active");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.textContent = "☰";
+    });
+});
+
+/* AÑO AUTOMÁTICO */
+
+document.getElementById("year").textContent =
+    new Date().getFullYear();
+
+/* FORMULARIO DE CONTACTO */
+
+const contactForm = document.getElementById("contactForm");
+const formMessage = document.getElementById("formMessage");
+
+contactForm.addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    if (!contactForm.checkValidity()) {
+        contactForm.reportValidity();
+        return;
+    }
+
+    const nombre = document.getElementById("nombre").value.trim();
+    const correo = document.getElementById("correo").value.trim();
+    const asunto = document.getElementById("asunto").value.trim();
+    const mensaje = document.getElementById("mensaje").value.trim();
+
+    if (!nombre || !correo || !asunto || !mensaje) {
+        formMessage.textContent =
+            "Por favor, completa todos los campos.";
+        return;
+    }
+
+    const destinatario = "TU_CORREO@DOMINIO.COM";
+
+    const cuerpo =
+        "Nombre: " + nombre + "\n" +
+        "Correo: " + correo + "\n\n" +
+        "Mensaje:\n" + mensaje;
+
+    const mailto =
+        "mailto:" + destinatario +
+        "?subject=" + encodeURIComponent(asunto) +
+        "&body=" + encodeURIComponent(cuerpo);
+
+    formMessage.textContent =
+        "Abriendo tu aplicación de correo para enviar el mensaje...";
+
+    window.location.href = mailto;
+});
+
+/* DESPLAZAMIENTO SUAVE */
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener("click", function(event) {
+        const target = document.querySelector(
+            this.getAttribute("href")
+        );
+
+        if (target) {
+            event.preventDefault();
+            target.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+        }
+    });
+});
+
+</script>
+
+</body>
+</html>
