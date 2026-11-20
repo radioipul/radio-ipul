@@ -1904,7 +1904,14 @@ const duration = document.getElementById("duration");
 
 let currentSong = 0;
 
-audio.volume = 0.8;
+// RECORDAR EL ÚLTIMO VOLUMEN
+const savedVolume = localStorage.getItem("radioIPULVolume");
+
+audio.volume = savedVolume !== null
+    ? Number(savedVolume)
+    : 0.8;
+
+volumeControl.value = audio.volume;
 
 function formatTime(seconds) {
     if (!Number.isFinite(seconds)) return "0:00";
@@ -1993,6 +2000,11 @@ document.getElementById("prevSong")
 // Control de volumen
 volumeControl.addEventListener("input", () => {
     audio.volume = Number(volumeControl.value);
+
+    localStorage.setItem(
+        "radioIPULVolume",
+        audio.volume
+    );
 });
 
 // Duración de la canción
