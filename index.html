@@ -1481,7 +1481,161 @@ volumeControl.addEventListener("input", () => {
 
 audio.addEventListener("ended", nextSong);
 
+
+/* =====================================
+   REPRODUCTOR PROFESIONAL RADIO IPUL
+===================================== */
+
+const songs = Array.from({ length: 12 }, (_, i) => ({
+    title: "Alabanza " + (i + 1),
+    src: "MUSICA/alabanza" + (i + 1) + ".mp3"
+}));
+
+const audio = document.getElementById("audioPlayer");
+const songTitle = document.getElementById("songTitle");
+const songStatus = document.getElementById("songStatus");
+const playPause = document.getElementById("playPause");
+const playlist = document.getElementById("playlist");
+const volumeControl = document.getElementById("volumeControl");
+const progressBar = document.getElementById("progressBar");
+const currentTime = document.getElementById("currentTime");
+const duration = document.getElementById("duration");
+
+let currentSong = 0;
+
+audio.volume = 0.8;
+
+function formatTime(seconds) {
+    if (!Number.isFinite(seconds)) return "0:00";
+
+    const min = Math.floor(seconds / 60);
+    const sec = Math.floor(seconds % 60);
+
+    return min + ":" + String(sec).padStart(2, "0");
+}
+
+function updatePlaylist() {
+    document.querySelectorAll("#playlist li").forEach((item, i) => {
+        item.classList.toggle("active", i === currentSong);
+    });
+}
+
+function loadSong(index) {
+    currentSong = (index + songs.length) % songs.length;
+
+    audio.src = songs[currentSong].src;
+    songTitle.textContent = songs[currentSong].title;
+    songStatus.textContent = "Radio IPUL • Música cristiana";
+
+    progressBar.value = 0;
+    currentTime.textContent = "0:00";
+    duration.textContent = "0:00";
+
+    updatePlaylist();
+}
+
+function playSong() {
+    audio.play().then(() => {
+        playPause.textContent = "❚❚";
+        songStatus.textContent = "Reproduciendo";
+    }).catch(() => {
+        playPause.textContent = "▶";
+        songStatus.textContent = "No se pudo reproducir";
+    });
+}
+
+function pauseSong() {
+    audio.pause();
+    playPause.textContent = "▶";
+    songStatus.textContent = "Reproducción pausada";
+}
+
+function nextSong() {
+    loadSong(currentSong + 1);
+    playSong();
+}
+
+function previousSong() {
+    loadSong(currentSong - 1);
+    playSong();
+}
+
+// Crear lista de las 12 alabanzas
+songs.forEach((song, index) => {
+    const item = document.createElement("li");
+
+    item.textContent = song.title;
+
+    item.addEventListener("click", () => {
+        loadSong(index);
+        playSong();
+    });
+
+    playlist.appendChild(item);
+});
+
+// Botones de reproducción
+playPause.addEventListener("click", () => {
+    if (audio.paused) {
+        playSong();
+    } else {
+        pauseSong();
+    }
+});
+
+document.getElementById("nextSong")
+    .addEventListener("click", nextSong);
+
+document.getElementById("prevSong")
+    .addEventListener("click", previousSong);
+
+// Control de volumen
+volumeControl.addEventListener("input", () => {
+    audio.volume = Number(volumeControl.value);
+});
+
+// Duración de la canción
+audio.addEventListener("loadedmetadata", () => {
+    duration.textContent = formatTime(audio.duration);
+});
+
+// Actualizar barra de progreso
+audio.addEventListener("timeupdate", () => {
+    if (Number.isFinite(audio.duration) && audio.duration > 0) {
+        progressBar.value =
+            (audio.currentTime / audio.duration) * 100;
+    }
+
+    currentTime.textContent = formatTime(audio.currentTime);
+});
+
+// Permitir adelantar o retroceder la canción
+progressBar.addEventListener("input", () => {
+    if (Number.isFinite(audio.duration) && audio.duration > 0) {
+        audio.currentTime =
+            (Number(progressBar.value) / 100) * audio.duration;
+    }
+});
+
+// Reproducir la siguiente canción automáticamente
+audio.addEventListener("ended", nextSong);
+
+audio.addEventListener("pause", () => {
+    playPause.textContent = "▶";
+});
+
+audio.addEventListener("play", () => {
+    playPause.textContent = "❚❚";
+});
+
+audio.addEventListener("error", () => {
+    songStatus.textContent = "No se pudo cargar el archivo de audio";
+    playPause.textContent = "▶";
+});
+
+// Cargar la primera canción
 loadSong(0);
+
     
 /* =====================================
    REPRODUCTOR PROFESIONAL RADIO IPUL
