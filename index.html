@@ -2005,7 +2005,17 @@ progressBar.addEventListener("input", () => {
 });
 
 // Reproducir la siguiente canción automáticamente
-audio.addEventListener("ended", nextSong);
+
+// REPETICIÓN Y SIGUIENTE CANCIÓN AUTOMÁTICA
+audio.addEventListener("ended", () => {
+    if (repeatEnabled) {
+        audio.currentTime = 0;
+        playSong();
+    } else {
+        nextSong();
+    }
+});
+
 
 audio.addEventListener("pause", () => {
     playPause.textContent = "▶";
