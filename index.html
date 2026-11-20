@@ -1932,6 +1932,32 @@ document.getElementById("nextSong")
 
 document.getElementById("prevSong")
     .addEventListener("click", previousSong);
+    
+// BOTÓN DE REPRODUCCIÓN ALEATORIA
+const shuffleBtn = document.getElementById("shuffleBtn");
+
+shuffleBtn.addEventListener("click", () => {
+    shuffleEnabled = !shuffleEnabled;
+
+    shuffleBtn.textContent = shuffleEnabled
+        ? "🔀 Aleatorio: ON"
+        : "🔀 Aleatorio: OFF";
+
+    shuffleBtn.classList.toggle("active", shuffleEnabled);
+});
+
+// BOTÓN DE REPETICIÓN
+const repeatBtn = document.getElementById("repeatBtn");
+
+repeatBtn.addEventListener("click", () => {
+    repeatEnabled = !repeatEnabled;
+
+    repeatBtn.textContent = repeatEnabled
+        ? "🔁 Repetir: ON"
+        : "🔁 Repetir: OFF";
+
+    repeatBtn.classList.toggle("active", repeatEnabled);
+});
 
 // Control de volumen
 volumeControl.addEventListener("input", () => {
