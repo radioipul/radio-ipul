@@ -1851,12 +1851,15 @@ function previousSong() {
     loadSong(currentSong - 1);
     playSong();
 }
-
-// Crear lista de las 12 alabanzas
+// Crear lista profesional de las 12 alabanzas
 songs.forEach((song, index) => {
     const item = document.createElement("li");
 
-    item.textContent = song.title;
+    item.innerHTML = `
+        <span class="song-number">${String(index + 1).padStart(2, "0")}</span>
+        <span class="song-name">${song.title}</span>
+        <span class="song-indicator">♫</span>
+    `;
 
     item.addEventListener("click", () => {
         loadSong(index);
