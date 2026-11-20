@@ -497,6 +497,45 @@ img {
     font-weight: 800;
 }
 
+/* NUMERACIÓN E INDICADOR MUSICAL */
+
+.playlist li {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.song-number {
+    color: #d4af37;
+    font-size: 12px;
+    font-weight: 800;
+    min-width: 24px;
+}
+
+.song-name {
+    flex: 1;
+}
+
+.song-indicator {
+    color: #d4af37;
+    font-size: 19px;
+    display: none;
+}
+
+.playlist li.active .song-indicator {
+    display: inline-block;
+    animation: musicPulse 1s infinite;
+}
+
+@keyframes musicPulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: .35;
+    }
+}
+
 @media (max-width: 560px) {
     .music-player {
         padding: 18px 14px;
