@@ -1891,8 +1891,20 @@ function pauseSong() {
     songStatus.textContent = "Reproducción pausada";
 }
 
+
 function nextSong() {
-    loadSong(currentSong + 1);
+    if (shuffleEnabled) {
+        let nextIndex;
+
+        do {
+            nextIndex = Math.floor(Math.random() * songs.length);
+        } while (nextIndex === currentSong && songs.length > 1);
+
+        loadSong(nextIndex);
+    } else {
+        loadSong(currentSong + 1);
+    }
+
     playSong();
 }
 
