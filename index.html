@@ -447,37 +447,57 @@ img {
     flex: 1;
 }
 
+
+/* LISTA DE REPRODUCCIÓN PROFESIONAL */
+
 .playlist {
-    border-top: 1px solid rgba(255,255,255,.15);
-    padding-top: 20px;
+    border-top: 1px solid rgba(212,175,55,.35);
+    padding-top: 24px;
+    margin-top: 25px;
 }
 
 .playlist h3 {
-    font-size: 16px;
-    margin-bottom: 12px;
+    font-size: 17px;
+    color: #d4af37;
+    margin-bottom: 18px;
+    font-weight: 800;
 }
 
 .playlist ol {
-    padding-left: 25px;
-    max-height: 280px;
+    list-style: none;
+    padding: 0;
+    max-height: 300px;
     overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
 
 .playlist li {
-    padding: 12px 9px;
-    font-size: 13px;
-    border-bottom: 1px solid rgba(255,255,255,.08);
+    padding: 14px 16px;
+    font-size: 14px;
+    border: 1px solid rgba(255,255,255,.09);
+    border-radius: 10px;
     cursor: pointer;
     color: #dce8f7;
+    background: rgba(255,255,255,.04);
+    transition: all .25s ease;
+}
+
+.playlist li:hover {
+    background: rgba(212,175,55,.12);
+    border-color: #d4af37;
+    transform: translateX(4px);
 }
 
 .playlist li.active {
     color: #d4af37;
-    background: rgba(212,175,55,.10);
+    background: rgba(212,175,55,.14);
+    border: 1px solid #d4af37;
     font-weight: 800;
 }
 
-@media(max-width:560px) {
+@media (max-width: 560px) {
     .music-player {
         padding: 18px 14px;
         border-radius: 15px;
@@ -495,7 +515,13 @@ img {
         width: 95px;
         height: 95px;
     }
+
+    .playlist li {
+        padding: 13px 12px;
+        font-size: 13px;
+    }
 }
+
 :root {
     --navy: #06152f;
     --navy2: #0b2145;
