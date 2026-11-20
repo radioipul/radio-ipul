@@ -1468,5 +1468,292 @@ audio.addEventListener("ended", nextSong);
 loadSong(0);
 </script>
 
+/* =====================================
+   RADIO IPUL - RESPONSIVE PROFESIONAL
+   CELULARES, TABLETAS Y COMPUTADORAS
+===================================== */
+
+/* IMÁGENES */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.logo-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.radio-symbol img {
+    width: min(220px, 75%);
+    max-height: 190px;
+    object-fit: contain;
+}
+
+.contact-item img {
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+}
+
+/* ENCABEZADO */
+.navbar {
+    position: relative;
+}
+
+.nav-links a {
+    transition: color .25s ease, background .25s ease;
+}
+
+/* TABLETAS Y LAPTOPS */
+@media (min-width: 851px) and (max-width: 1100px) {
+    .container {
+        width: 92%;
+    }
+
+    .nav-links {
+        gap: 14px;
+    }
+
+    .nav-links a {
+        font-size: 12px;
+    }
+
+    .logo-text strong {
+        font-size: 18px;
+    }
+
+    .about-grid {
+        gap: 30px;
+    }
+}
+
+/* TABLETAS */
+@media (max-width: 850px) {
+    .navbar {
+        min-height: 72px;
+    }
+
+    .nav-links {
+        top: 100%;
+        max-height: calc(100vh - 72px);
+        overflow-y: auto;
+    }
+
+    .hero {
+        min-height: auto;
+    }
+
+    .hero-content {
+        max-width: 650px;
+    }
+
+    .about-grid,
+    .contact-grid {
+        gap: 35px;
+    }
+
+    .music-player {
+        width: 100%;
+    }
+}
+
+/* CELULARES */
+@media (max-width: 560px) {
+    .container {
+        width: 92%;
+    }
+
+    .navbar {
+        min-height: 68px;
+        gap: 10px;
+    }
+
+    .logo {
+        gap: 8px;
+    }
+
+    .logo-icon {
+        width: 45px;
+        height: 45px;
+    }
+
+    .logo-text strong {
+        font-size: 17px;
+        letter-spacing: 1px;
+    }
+
+    .logo-text small {
+        font-size: 8px;
+        letter-spacing: 1px;
+    }
+
+    .menu-toggle {
+        font-size: 29px;
+        padding: 8px;
+        min-width: 44px;
+        min-height: 44px;
+    }
+
+    .nav-links {
+        top: 100%;
+        padding: 12px 4% 20px;
+    }
+
+    .nav-links li a {
+        padding: 14px 10px;
+        font-size: 14px;
+    }
+
+    .hero-content {
+        padding: 65px 0;
+    }
+
+    .hero h1 {
+        font-size: clamp(37px, 10vw, 48px);
+        overflow-wrap: break-word;
+    }
+
+    .hero p {
+        font-size: 14px;
+        line-height: 1.8;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+        min-height: 48px;
+    }
+
+    section {
+        padding: 55px 0;
+    }
+
+    .section-title {
+        margin-bottom: 32px;
+    }
+
+    .about-content h2 {
+        font-size: 29px;
+    }
+
+    .about-visual {
+        min-height: 240px;
+        padding: 20px;
+    }
+
+    .radio-symbol img {
+        max-height: 140px;
+    }
+
+    .music-player {
+        padding: 18px 14px;
+        margin: 30px auto;
+        border-radius: 14px;
+    }
+
+    .music-header h2 {
+        font-size: 21px;
+    }
+
+    .music-current {
+        padding: 13px;
+        gap: 10px;
+    }
+
+    .music-current h3 {
+        font-size: 14px;
+    }
+
+    .music-controls {
+        gap: 24px;
+        margin: 22px 0;
+    }
+
+    .music-controls button {
+        min-width: 44px;
+        min-height: 44px;
+    }
+
+    .music-controls .play-button {
+        width: 58px;
+        height: 58px;
+    }
+
+    .playlist {
+        min-width: 0;
+    }
+
+    .playlist ol {
+        max-height: 250px;
+        overflow-y: auto;
+        padding-right: 5px;
+    }
+
+    .playlist li {
+        padding: 12px 8px;
+        font-size: 13px;
+    }
+
+    .service-card,
+    .program-card {
+        padding: 24px 20px;
+    }
+
+    .contact-form {
+        padding: 20px 16px;
+    }
+
+    .contact-form .btn {
+        width: 100%;
+        min-height: 48px;
+    }
+
+    .footer-grid {
+        gap: 28px;
+    }
+
+    .copyright {
+        line-height: 1.8;
+    }
+}
+
+/* PANTALLAS MUY PEQUEÑAS */
+@media (max-width: 360px) {
+    .logo-text strong {
+        font-size: 15px;
+    }
+
+    .logo-icon {
+        width: 39px;
+        height: 39px;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .music-controls {
+        gap: 12px;
+    }
+}
+
+/* ACCESIBILIDAD */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
 </body>
 </html>
