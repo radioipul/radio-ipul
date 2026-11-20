@@ -13,6 +13,202 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+/* =====================================
+   REPRODUCTOR PROFESIONAL RADIO IPUL
+===================================== */
+
+.music-player {
+    max-width: 720px;
+    width: 100%;
+    margin: 45px auto;
+    padding: 30px;
+    background: linear-gradient(145deg, #06152f, #0b3670);
+    border: 1px solid #d4af37;
+    border-radius: 20px;
+    color: white;
+    box-shadow: 0 18px 45px rgba(6,21,47,.20);
+}
+
+.music-header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.music-header span {
+    color: #d4af37;
+    font-weight: 800;
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+.music-header h2 {
+    margin: 9px 0;
+    font-size: 27px;
+}
+
+.music-header p {
+    color: #c4d1e3;
+    font-size: 13px;
+}
+
+.music-cover {
+    min-height: 190px;
+    background: radial-gradient(circle, #174e87, #06152f);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 22px;
+}
+
+.music-cover img {
+    width: 115px;
+    height: 115px;
+    object-fit: contain;
+}
+
+.music-cover span {
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: #d4af37;
+    font-weight: 800;
+}
+
+.music-current {
+    display: block;
+    background: rgba(255,255,255,.08);
+    padding: 18px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.music-current small {
+    color: #d4af37;
+    font-weight: 800;
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+
+.music-current h3 {
+    font-size: 18px;
+    margin: 6px 0;
+    overflow-wrap: anywhere;
+}
+
+.music-current p {
+    color: #a9c6e6;
+    font-size: 12px;
+}
+
+.music-progress {
+    margin-top: 22px;
+}
+
+.music-progress input,
+.music-volume input {
+    width: 100%;
+    accent-color: #d4af37;
+    cursor: pointer;
+}
+
+.music-times {
+    display: flex;
+    justify-content: space-between;
+    color: #c4d1e3;
+    font-size: 11px;
+    margin-top: 5px;
+}
+
+.music-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin: 22px 0;
+}
+
+.music-controls button {
+    min-width: 44px;
+    min-height: 44px;
+    border: none;
+    background: transparent;
+    color: white;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.music-controls .play-button {
+    width: 62px;
+    height: 62px;
+    border-radius: 50%;
+    background: #d4af37;
+    color: #06152f;
+    font-size: 24px;
+}
+
+.music-volume {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 12px;
+    margin-bottom: 25px;
+}
+
+.music-volume input {
+    flex: 1;
+}
+
+.playlist {
+    border-top: 1px solid rgba(255,255,255,.15);
+    padding-top: 20px;
+}
+
+.playlist h3 {
+    font-size: 16px;
+    margin-bottom: 12px;
+}
+
+.playlist ol {
+    padding-left: 25px;
+    max-height: 280px;
+    overflow-y: auto;
+}
+
+.playlist li {
+    padding: 12px 9px;
+    font-size: 13px;
+    border-bottom: 1px solid rgba(255,255,255,.08);
+    cursor: pointer;
+    color: #dce8f7;
+}
+
+.playlist li.active {
+    color: #d4af37;
+    background: rgba(212,175,55,.10);
+    font-weight: 800;
+}
+
+@media(max-width:560px) {
+    .music-player {
+        padding: 18px 14px;
+        border-radius: 15px;
+    }
+
+    .music-header h2 {
+        font-size: 22px;
+    }
+
+    .music-cover {
+        min-height: 160px;
+    }
+
+    .music-cover img {
+        width: 95px;
+        height: 95px;
+    }
+}
 
 <style>
 :root {
@@ -1635,205 +1831,6 @@ audio.addEventListener("error", () => {
 
 // Cargar la primera canción
 loadSong(0);
-
-    
-/* =====================================
-   REPRODUCTOR PROFESIONAL RADIO IPUL
-===================================== */
-
-.music-player {
-    max-width: 720px;
-    width: 100%;
-    margin: 45px auto;
-    padding: 30px;
-    background: linear-gradient(145deg, #06152f, #0b3670);
-    border: 1px solid #d4af37;
-    border-radius: 20px;
-    color: white;
-    box-shadow: 0 18px 45px rgba(6,21,47,.20);
-}
-
-.music-header {
-    text-align: center;
-    margin-bottom: 25px;
-}
-
-.music-header span {
-    color: #d4af37;
-    font-weight: 800;
-    font-size: 11px;
-    letter-spacing: 2px;
-}
-
-.music-header h2 {
-    margin: 9px 0;
-    font-size: 27px;
-}
-
-.music-header p {
-    color: #c4d1e3;
-    font-size: 13px;
-}
-
-.music-cover {
-    min-height: 190px;
-    background: radial-gradient(circle, #174e87, #06152f);
-    border-radius: 15px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    margin-bottom: 22px;
-}
-
-.music-cover img {
-    width: 115px;
-    height: 115px;
-    object-fit: contain;
-}
-
-.music-cover span {
-    font-size: 10px;
-    letter-spacing: 2px;
-    color: #d4af37;
-    font-weight: 800;
-}
-
-.music-current {
-    display: block;
-    background: rgba(255,255,255,.08);
-    padding: 18px;
-    border-radius: 12px;
-    text-align: center;
-}
-
-.music-current small {
-    color: #d4af37;
-    font-weight: 800;
-    font-size: 10px;
-    letter-spacing: 1px;
-}
-
-.music-current h3 {
-    font-size: 18px;
-    margin: 6px 0;
-    overflow-wrap: anywhere;
-}
-
-.music-current p {
-    color: #a9c6e6;
-    font-size: 12px;
-}
-
-.music-progress {
-    margin-top: 22px;
-}
-
-.music-progress input,
-.music-volume input {
-    width: 100%;
-    accent-color: #d4af37;
-    cursor: pointer;
-}
-
-.music-times {
-    display: flex;
-    justify-content: space-between;
-    color: #c4d1e3;
-    font-size: 11px;
-    margin-top: 5px;
-}
-
-.music-controls {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
-    margin: 22px 0;
-}
-
-.music-controls button {
-    min-width: 44px;
-    min-height: 44px;
-    border: none;
-    background: transparent;
-    color: white;
-    font-size: 25px;
-    cursor: pointer;
-}
-
-.music-controls .play-button {
-    width: 62px;
-    height: 62px;
-    border-radius: 50%;
-    background: #d4af37;
-    color: #06152f;
-    font-size: 24px;
-}
-
-.music-volume {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    font-size: 12px;
-    margin-bottom: 25px;
-}
-
-.music-volume input {
-    flex: 1;
-}
-
-.playlist {
-    border-top: 1px solid rgba(255,255,255,.15);
-    padding-top: 20px;
-}
-
-.playlist h3 {
-    font-size: 16px;
-    margin-bottom: 12px;
-}
-
-.playlist ol {
-    padding-left: 25px;
-    max-height: 280px;
-    overflow-y: auto;
-}
-
-.playlist li {
-    padding: 12px 9px;
-    font-size: 13px;
-    border-bottom: 1px solid rgba(255,255,255,.08);
-    cursor: pointer;
-    color: #dce8f7;
-}
-
-.playlist li.active {
-    color: #d4af37;
-    background: rgba(212,175,55,.10);
-    font-weight: 800;
-}
-
-@media(max-width:560px) {
-    .music-player {
-        padding: 18px 14px;
-        border-radius: 15px;
-    }
-
-    .music-header h2 {
-        font-size: 22px;
-    }
-
-    .music-cover {
-        min-height: 160px;
-    }
-
-    .music-cover img {
-        width: 95px;
-        height: 95px;
-    }
-}
-
 </script>
 
 /* =====================================
