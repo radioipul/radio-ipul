@@ -594,9 +594,12 @@ img {
     }
 
     .music-cover img {
-        width: 95px;
-        height: 95px;
-    }
+    width: 100%;
+    max-width: 280px;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: contain;
+}
 
     .playlist li {
         padding: 13px 12px;
