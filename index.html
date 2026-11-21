@@ -46,21 +46,55 @@ img {
 }
 
 /* BOTONES 3D DEL MENU DE NAVEGACION */
+
+/* BOTONES DORADOS 3D - RADIO IPUL */
 .nav-links a {
+    position: relative;
+    isolation: isolate;
     display: inline-block;
-    padding: 10px 16px;
+    padding: 12px 22px;
     color: #ffffff;
+    font-size: 14px;
+    font-weight: 800;
     text-decoration: none;
-    font-weight: 700;
-    background: linear-gradient(145deg, #123c70, #06152f);
-    border: 1px solid #b99f6f;
-    border-radius: 8px;
-    box-shadow:
-        0 4px 0 #032044,
-        0 6px 12px rgba(0, 0, 0, 0.45),
-        inset 0 1px 2px rgba(255,255,255,0.25);
-    transition: all .25s ease;
+    text-shadow: 0 1px 2px #8a5200;
+    transition: transform .25s ease, filter .25s ease;
+    z-index: 1;
 }
+
+.nav-links a::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    border-radius: 10px 3px 10px 3px;
+    transform: skewX(-10deg);
+    background: linear-gradient(
+        180deg,
+        #fff1a8 0%,
+        #ffc928 18%,
+        #ffad00 55%,
+        #e88700 100%
+    );
+    border: 1px solid #ffe18a;
+    box-shadow:
+        0 5px 0 #a65d00,
+        0 9px 12px rgba(0,0,0,.45),
+        inset 0 2px 3px rgba(255,255,255,.8);
+}
+
+/* EFECTO AL PASAR EL CURSOR */
+.nav-links a:hover {
+    color: #ffffff;
+    transform: translateY(-4px);
+    filter: brightness(1.15);
+}
+
+/* EFECTO AL PRESIONAR */
+.nav-links a:active {
+    transform: translateY(3px);
+}
+
 
 /* EFECTO AL PASAR EL CURSOR */
 /* MENU 3D PREMIUM - RADIO IPUL */
