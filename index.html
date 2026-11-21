@@ -351,9 +351,15 @@ img {
 }
 
 .music-cover img {
-    width: 115px;
-    height: 115px;
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    aspect-ratio: 16 / 9;
     object-fit: contain;
+    border-radius: 12px;
+    display: block;
+    margin: 0 auto;
+    box-shadow: 0 8px 25px rgba(0,0,0,.35);
 }
 
 .music-cover span {
