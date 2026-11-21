@@ -447,6 +447,43 @@ img {
     flex: 1;
 }
 
+/* CONTROLES EXTRA DEL REPRODUCTOR */
+
+.extra-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin: 18px 0;
+}
+
+.extra-controls button {
+    padding: 11px 17px;
+    border: 1px solid #d4af37;
+    border-radius: 25px;
+    background: rgba(212,175,55,.08);
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all .25s ease;
+}
+
+.extra-controls button:hover,
+.extra-controls button.active {
+    background: #d4af37;
+    color: #06152f;
+    box-shadow: 0 0 14px rgba(212,175,55,.35);
+}
+
+@media (max-width: 560px) {
+    .extra-controls button {
+        padding: 10px 13px;
+        font-size: 12px;
+    }
+}
+
 
 /* LISTA DE REPRODUCCIÓN PROFESIONAL */
 
