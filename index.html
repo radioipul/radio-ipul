@@ -855,18 +855,32 @@ header {
 
 /* HERO */
 
+
 .hero {
     min-height: 620px;
     display: flex;
     align-items: center;
     color: white;
     background:
-        radial-gradient(circle at 80% 40%, rgba(8,123,219,.30), transparent 35%),
-        linear-gradient(120deg, #06152f, #0b2145 65%, #071b38);
+        radial-gradient(
+            ellipse at 80% 35%,
+            rgba(22, 165, 255, 0.32),
+            transparent 42%
+        ),
+        radial-gradient(
+            circle at 15% 85%,
+            rgba(4, 80, 155, 0.22),
+            transparent 35%
+        ),
+        linear-gradient(
+            120deg,
+            #06152F 0%,
+            #0B2145 55%,
+            #071B38 100%
+        );
     overflow: hidden;
     position: relative;
 }
-
 .hero::before {
     content: "";
     position: absolute;
