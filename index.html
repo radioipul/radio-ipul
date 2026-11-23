@@ -1636,6 +1636,189 @@ footer {
     }
 }
 
+ 
+/* =========================================
+   TARJETAS PREMIUM - RADIO IPUL
+   Efecto 3D azul oscuro, azul brillante y dorado
+========================================= */
+
+/* TARJETAS DE SERVICIOS */
+
+.service-card {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(145deg, #ffffff, #f1f6fc);
+    border: 1px solid rgba(212, 175, 55, 0.75);
+    border-radius: 17px;
+
+    box-shadow:
+        0 8px 22px rgba(6, 21, 47, 0.09),
+        inset 0 0 0 2px rgba(8, 123, 219, 0.07);
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        border-color 0.35s ease;
+}
+
+/* Brillo decorativo superior */
+
+.service-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(
+        90deg,
+        #06152f,
+        #087bdb,
+        #d4af37
+    );
+}
+
+/* Efecto de elevación */
+
+.service-card:hover {
+    transform: translateY(-9px) perspective(900px) rotateX(2deg);
+
+    border-color: #d4af37;
+
+    box-shadow:
+        0 20px 38px rgba(6, 21, 47, 0.17),
+        0 5px 15px rgba(8, 123, 219, 0.12),
+        inset 0 0 0 1px rgba(212, 175, 55, 0.35);
+}
+
+/* ICONOS DE SERVICIOS */
+
+.service-icon {
+    background: linear-gradient(145deg, #e7f3ff, #c9e5ff);
+    border: 1px solid rgba(8, 123, 219, 0.25);
+
+    box-shadow:
+        0 5px 12px rgba(8, 123, 219, 0.13),
+        inset 0 1px 3px rgba(255, 255, 255, 0.9);
+
+    transition: transform 0.35s ease;
+}
+
+.service-card:hover .service-icon {
+    transform: translateY(-3px) scale(1.07);
+}
+
+/* MEJOR CONTRASTE EN SERVICIOS */
+
+.service-card h3 {
+    color: #06152f;
+    font-weight: 800;
+}
+
+.service-card p {
+    color: #52647c;
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   TARJETAS DE PROGRAMACIÓN
+========================================= */
+
+.program-card {
+    position: relative;
+    overflow: hidden;
+
+    background: linear-gradient(
+        145deg,
+        #06152f,
+        #0b3670,
+        #087bdb
+    );
+
+    border: 1px solid rgba(212, 175, 55, 0.65);
+    border-bottom: 4px solid #d4af37;
+    border-radius: 16px;
+
+    box-shadow:
+        0 9px 24px rgba(6, 21, 47, 0.20),
+        inset 0 1px 0 rgba(255, 255, 255, 0.10);
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        border-color 0.35s ease;
+}
+
+/* Reflejo decorativo */
+
+.program-card::before {
+    content: "";
+    position: absolute;
+    top: -60px;
+    right: -60px;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+
+    background: radial-gradient(
+        circle,
+        rgba(22, 165, 255, 0.25),
+        transparent 70%
+    );
+
+    pointer-events: none;
+}
+
+/* Elevación 3D */
+
+.program-card:hover {
+    transform: translateY(-9px) perspective(900px) rotateX(2deg);
+
+    border-color: #d4af37;
+
+    box-shadow:
+        0 20px 40px rgba(6, 21, 47, 0.30),
+        0 5px 18px rgba(22, 165, 255, 0.20);
+}
+
+/* TEXTOS DE PROGRAMACIÓN */
+
+.program-card .time {
+    color: #ffd95c;
+    font-weight: 800;
+    letter-spacing: 1.3px;
+}
+
+.program-card h3 {
+    color: #ffffff;
+    font-weight: 800;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+}
+
+.program-card p {
+    color: #e0edff;
+    line-height: 1.8;
+}
+
+/* EVITAR ANIMACIONES EXCESIVAS EN MÓVILES */
+
+@media (hover: none) {
+    .service-card:hover,
+    .program-card:hover {
+        transform: none;
+    }
+}
+
+/* RESPETAR PREFERENCIAS DE MOVIMIENTO */
+
+@media (prefers-reduced-motion: reduce) {
+    .service-card,
+    .program-card,
+    .service-icon {
+        transition: none;
+    }
+}       
 </style>
 </head>
 
