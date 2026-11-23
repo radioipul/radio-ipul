@@ -1367,6 +1367,275 @@ footer {
         min-height: 280px;
     }
 }
+
+        
+/* =========================================
+   MEJORA VISUAL PREMIUM - REPRODUCTOR RADIO IPUL
+========================================= */
+
+/* TARJETA PRINCIPAL */
+
+.music-player {
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(22, 165, 255, 0.16),
+            transparent 45%
+        ),
+        linear-gradient(145deg, #06152F, #0B3670);
+
+    border: 1px solid rgba(212, 175, 55, 0.75);
+    border-radius: 22px;
+
+    box-shadow:
+        0 20px 50px rgba(6, 21, 47, 0.25),
+        0 0 25px rgba(212, 175, 55, 0.08);
+
+    position: relative;
+    overflow: hidden;
+}
+
+/* DETALLE DORADO SUPERIOR */
+
+.music-player::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 10%;
+    width: 80%;
+    height: 2px;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #D4AF37,
+        #FFE18A,
+        #D4AF37,
+        transparent
+    );
+}
+
+/* ENCABEZADO MUSICAL */
+
+.music-header h2 {
+    color: #FFFFFF;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+}
+
+.music-header p {
+    color: #C4D1E3;
+}
+
+/* PORTADA MUSICAL */
+
+.music-cover {
+    background:
+        radial-gradient(circle, #174E87, #06152F);
+
+    border: 1px solid rgba(212, 175, 55, 0.35);
+    border-radius: 17px;
+    padding: 12px;
+
+    box-shadow:
+        inset 0 0 25px rgba(22, 165, 255, 0.12),
+        0 8px 25px rgba(0, 0, 0, 0.20);
+}
+
+.music-cover img {
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    transition: transform .4s ease, box-shadow .4s ease;
+}
+
+.music-cover img:hover {
+    transform: scale(1.015);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+}
+
+/* INFORMACIÓN DE LA CANCIÓN */
+
+.music-current {
+    background: linear-gradient(
+        110deg,
+        rgba(255,255,255,.09),
+        rgba(255,255,255,.035)
+    );
+
+    border: 1px solid rgba(255,255,255,.10);
+    border-radius: 14px;
+}
+
+.music-current h3 {
+    color: #FFFFFF;
+    font-weight: 800;
+}
+
+.music-current small {
+    color: #FFD54A;
+    letter-spacing: 1.5px;
+}
+
+/* BARRA DE PROGRESO */
+
+.music-progress input {
+    accent-color: #FFD54A;
+    height: 7px;
+    cursor: pointer;
+}
+
+.music-times {
+    color: #D4DDEA;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+}
+
+/* CONTROLES MUSICALES */
+
+.music-controls button {
+    color: #FFFFFF;
+    transition: all .25s ease;
+}
+
+.music-controls button:hover {
+    color: #FFD54A;
+    transform: scale(1.12);
+}
+
+.music-controls .play-button {
+    background: linear-gradient(
+        135deg,
+        #FFE18A,
+        #D4AF37,
+        #F5B800
+    );
+
+    color: #06152F;
+
+    border: 2px solid #FFE18A;
+
+    box-shadow:
+        0 5px 18px rgba(212, 175, 55, .35),
+        inset 0 2px 3px rgba(255,255,255,.45);
+
+    transition: all .3s ease;
+}
+
+.music-controls .play-button:hover {
+    transform: scale(1.09);
+    box-shadow: 0 7px 25px rgba(255,201,40,.5);
+}
+
+/* VOLUMEN */
+
+.music-volume {
+    color: #FFFFFF;
+    font-weight: 600;
+}
+
+.music-volume input {
+    accent-color: #D4AF37;
+}
+
+/* BOTONES ALEATORIO Y REPETICIÓN */
+
+.extra-controls button {
+    border-color: #D4AF37;
+    background: rgba(212,175,55,.08);
+    border-radius: 25px;
+    transition: all .3s ease;
+}
+
+.extra-controls button:hover,
+.extra-controls button.active {
+    background: linear-gradient(
+        135deg,
+        #FFE18A,
+        #D4AF37
+    );
+
+    color: #06152F;
+    transform: translateY(-2px);
+}
+
+/* LISTA MUSICAL */
+
+.playlist h3 {
+    color: #FFD54A;
+    font-size: 18px;
+    letter-spacing: .5px;
+}
+
+.playlist li {
+    background: rgba(255,255,255,.045);
+    border: 1px solid rgba(255,255,255,.09);
+    border-radius: 11px;
+    transition: all .25s ease;
+}
+
+.playlist li:hover {
+    background: rgba(212,175,55,.12);
+    border-color: #D4AF37;
+    transform: translateX(4px);
+}
+
+/* CANCIÓN SELECCIONADA */
+
+.playlist li.active {
+    background: linear-gradient(
+        100deg,
+        rgba(212,175,55,.20),
+        rgba(212,175,55,.06)
+    );
+
+    border: 1px solid #D4AF37;
+    color: #FFE18A;
+
+    box-shadow: 0 0 14px rgba(212,175,55,.10);
+}
+
+/* BARRA DE DESPLAZAMIENTO */
+
+.playlist ol::-webkit-scrollbar {
+    width: 6px;
+}
+
+.playlist ol::-webkit-scrollbar-track {
+    background: rgba(255,255,255,.05);
+    border-radius: 10px;
+}
+
+.playlist ol::-webkit-scrollbar-thumb {
+    background: #D4AF37;
+    border-radius: 10px;
+}
+
+/* ADAPTACIÓN PARA CELULARES */
+
+@media (max-width: 560px) {
+
+    .music-player {
+        border-radius: 17px;
+        box-shadow: 0 12px 30px rgba(6,21,47,.20);
+    }
+
+    .music-cover {
+        padding: 8px;
+    }
+
+    .music-controls {
+        gap: 22px;
+    }
+
+    .music-controls .play-button {
+        width: 58px;
+        height: 58px;
+    }
+
+    .playlist li:hover {
+        transform: none;
+    }
+}
+
 </style>
 </head>
 
