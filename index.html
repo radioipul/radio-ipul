@@ -45,79 +45,60 @@ img {
     position: relative;
 }
 
-/* BOTONES 3D DEL MENU DE NAVEGACION */
 
+/* =====================================
+   MENÚ PROFESIONAL RADIO IPUL
+===================================== */
 
-/* BOTONES DORADOS 3D - RADIO IPUL */
 .nav-links a {
-    position: relative;
-    isolation: isolate;
-    display: inline-block;
-    padding: 12px 22px;
-    color: #ffffff;
+    color: #FFFFFF;
     font-size: 14px;
-    font-weight: 800;
+    font-weight: 600;
     text-decoration: none;
-    text-shadow: 0 1px 2px #8a5200;
-    transition: transform .25s ease, filter .25s ease;
-    z-index: 1;
-}
-
-.nav-links a::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-    border-radius: 10px 3px 10px 3px;
-    transform: skewX(-10deg);
-    background: linear-gradient(
-        180deg,
-        #fff1a8 0%,
-        #ffc928 18%,
-        #ffad00 55%,
-        #e88700 100%
-    );
-    border: 1px solid #ffe18a;
-    box-shadow:
-        0 5px 0 #a65d00,
-        0 9px 12px rgba(0,0,0,.45),
-        inset 0 2px 3px rgba(255,255,255,.8);
+    padding: 12px 18px;
+    border-radius: 7px;
+    transition: all 0.3s ease;
+    background: transparent;
+    border: 1px solid transparent;
 }
 
 /* EFECTO AL PASAR EL CURSOR */
+
 .nav-links a:hover {
-    color: #ffffff;
-    transform: translateY(-4px);
-    filter: brightness(1.15);
+    color: #FFD54A;
+    background: rgba(212, 175, 55, 0.10);
+    border-color: rgba(212, 175, 55, 0.35);
 }
 
-/* EFECTO AL PRESIONAR */
-.nav-links a:active {
-    transform: translateY(3px);
-}
-/* TABLETAS Y LAPTOPS */
-@media (min-width: 851px) and (max-width: 1100px) {
-    .container {
-        width: 92%;
-    }
+/* BOTÓN ESCUCHAR EN VIVO */
 
-    .nav-links {
-        gap: 14px;
-    }
-
-    .nav-links a {
-        font-size: 12px;
-    }
-
-    .logo-text strong {
-        font-size: 18px;
-    }
-
-    .about-grid {
-        gap: 30px;
-    }
+.nav-links .nav-cta {
+    background: linear-gradient(
+        135deg,
+        #FFE18A,
+        #D4AF37,
+        #F5B800
+    );
+    color: #06152F;
+    padding: 13px 22px;
+    border-radius: 8px;
+    font-weight: 800;
+    border: 1px solid #FFE18A;
+    box-shadow: 0 3px 12px rgba(212, 175, 55, 0.25);
 }
 
+/* EFECTO BOTÓN EN VIVO */
+
+.nav-links .nav-cta:hover {
+    background: linear-gradient(
+        135deg,
+        #FFF0B0,
+        #FFD700
+    );
+    color: #06152F;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 18px rgba(255, 201, 40, 0.4);
+}
 /* TABLETAS */
 @media (max-width: 850px) {
     .navbar {
