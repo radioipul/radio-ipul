@@ -675,32 +675,53 @@ button {
 
 /* NAVBAR */
 
+
+/* =========================================
+   ENCABEZADO PREMIUM - RADIO IPUL
+========================================= */
+
 header {
-    background: rgba(6,21,47,.97);
-    color: white;
+    background: linear-gradient(
+        135deg,
+        #06152F 0%,
+        #08264F 55%,
+        #06152F 100%
+    );
+    color: #FFFFFF;
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 4px 20px rgba(0,0,0,.15);
+    box-shadow:
+        0 5px 25px rgba(0, 0, 0, 0.35),
+        0 1px 0 rgba(212, 175, 55, 0.45);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.30);
+    backdrop-filter: blur(12px);
 }
 
+/* CONTENEDOR PRINCIPAL */
+
 .navbar {
-    min-height: 78px;
+    min-height: 88px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 20px;
 }
 
+/* LOGOTIPO */
+
 .logo {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 14px;
+    flex-shrink: 0;
 }
 
+/* IMAGEN DEL LOGO */
+
 .logo-icon {
-    width: 60px;
-    height: 60px;
+    width: 66px;
+    height: 66px;
     background: transparent;
     display: flex;
     align-items: center;
@@ -714,52 +735,94 @@ header {
     width: 100%;
     height: 100%;
     object-fit: contain;
+    filter: drop-shadow(0 2px 5px rgba(0,0,0,.35));
 }
+
+/* NOMBRE DE LA EMISORA */
 
 .logo-text strong {
     display: block;
-    font-size: 21px;
-    letter-spacing: 2px;
+    font-size: 23px;
+    letter-spacing: 2.5px;
     line-height: 1.2;
+    color: #FFFFFF;
+    font-weight: 800;
+    text-shadow: 0 2px 8px rgba(0,0,0,.35);
 }
 
+/* ESLOGAN */
+
 .logo-text small {
-    color: var(--gold);
+    display: block;
+    color: #D4AF37;
     font-size: 10px;
-    letter-spacing: 2px;
-    font-weight: 700;
+    letter-spacing: 2.5px;
+    font-weight: 800;
+    margin-top: 5px;
 }
+
+/* NAVEGACIÓN */
 
 .nav-links {
     display: flex;
     align-items: center;
-    gap: 27px;
+    gap: 18px;
     list-style: none;
 }
+
+/* BOTONES DEL MENÚ */
 
 .nav-links a {
     font-size: 13px;
     font-weight: 600;
-    color: #d9e4f5;
-    transition: .3s;
+    color: #E8EDF7;
+    transition: all .3s ease;
 }
+
+/* BOTÓN MENÚ ACTIVO / HOVER */
+
 .nav-links a:hover {
-    color: #ffffff;
+    color: #FFD54A;
 }
+
+/* BOTÓN ESCUCHAR EN VIVO */
+
 .nav-links .nav-cta {
-    background: var(--blue);
-    color: white;
-    padding: 11px 19px;
-    border-radius: 7px;
+    background: linear-gradient(
+        135deg,
+        #FFF0B0,
+        #D4AF37,
+        #F5B800
+    );
+    color: #06152F;
+    padding: 13px 21px;
+    border-radius: 8px;
+    font-weight: 800;
+    border: 1px solid #FFE18A;
+    box-shadow: 0 3px 12px rgba(212,175,55,.25);
+    transition: all .3s ease;
 }
+
+.nav-links .nav-cta:hover {
+    color: #06152F;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 18px rgba(255,201,40,.4);
+}
+
+/* BOTÓN MENÚ MÓVIL */
 
 .menu-toggle {
     display: none;
     border: 0;
     background: transparent;
-    color: white;
-    font-size: 27px;
+    color: #D4AF37;
+    font-size: 28px;
     cursor: pointer;
+    transition: .3s ease;
+}
+
+.menu-toggle:hover {
+    color: #FFD54A;
 }
 
 /* HERO */
